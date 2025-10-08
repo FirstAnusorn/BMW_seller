@@ -3,7 +3,7 @@
 Project README for the "BMW Seller" ETL pipeline that processes car sales data.
 
 ## Overview
-This project implements an ETL (Extract → Transform → Load) pipeline which reads raw CSV data (data/raw/BMW_sales_data_(2010-2024).csv), produces cleaned and summary datasets, saves them as CSV/Parquet files, and loads them into a SQLite database for analysis and visualization.
+This project implements an ETL (Extract → Transform → Load) pipeline which reads raw CSV data (data/raw/BMW_sales_data_(2010-2024).csv), produces cleaned and summary datasets, saves them as CSV files, and loads them into a SQLite database for analysis and visualization.
 
 ## Project structure
 - data/raw/ - raw data files (example: BMW_sales_data_(2010-2024).csv)
@@ -15,16 +15,16 @@ This project implements an ETL (Extract → Transform → Load) pipeline which r
   - transform_summary.py - build aggregated summary (group by Region + Fuel_Type + Year)
   - create_table.py - create tables in SQLite
   - load.py - load CSV/Parquet into SQLite (cleaned + summary tables)
-- notebooks/ - notebooks for EDA and visualization (EDA.ipynb, main.ipynb)
-- utils/ - helper modules logger.py
-- logs/ - runtime logs
+- notebooks - notebooks for EDA and visualization (EDA.ipynb, main.ipynb)
+- utils - helper modules logger.py
+- logs - runtime logs
 
 > If any script or filename differs in your copy of the repository, adjust the run commands accordingly.
 
 ## Contract / Quick specification
 - Input: data/raw/BMW_sales_data_(2010-2024).csv (raw CSV)
 - Outputs:
-  - cleaned CSV/Parquet: data/processed/bmw_cleaned.csv (or .parquet)
+  - cleaned CSV/Parquet: data/processed/bmw_cleaned.csv 
   - summary CSV/Parquet: data/processed/bmw_summary.csv
   - SQLite DB: data/db/bmw_sales.db (two tables: cleaned and summary)
 - Error modes: missing required columns, corrupted rows, I/O errors
