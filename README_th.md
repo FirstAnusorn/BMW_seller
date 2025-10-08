@@ -3,10 +3,10 @@
 เอกสารสำหรับโปรเจ็ค "BMW Seller" — ETL สำหรับข้อมูลการขายรถยนต์
 
 ## ภาพรวม
-โปรเจ็คนี้เป็น pipeline แบบ ETL (Extract → Transform → Load) ที่อ่านข้อมูลดิบจากไฟล์ CSV (`data/raw/BMW_sales_data_(2010-2024).csv), ทำความสะอาดและสร้างชุดข้อมูลสรุป แล้วบันทึกเป็นไฟล์ CSV/Parquet พร้อมโหลดลงฐานข้อมูล SQLite เพื่อใช้วิเคราะห์และสร้าง visualization
+โปรเจ็คนี้เป็น pipeline แบบ ETL (Extract → Transform → Load) ที่อ่านข้อมูลดิบจากไฟล์ CSV (data/raw/BMW_sales_data_(2010-2024).csv), ทำความสะอาดและสร้างชุดข้อมูลสรุป แล้วบันทึกเป็นไฟล์ CSV พร้อมโหลดลงฐานข้อมูล SQLite เพื่อใช้วิเคราะห์และสร้าง visualization
 
 ## โครงสร้างโปรเจ็ค
-- data/raw/ - ไฟล์ข้อมูลดิบ (ตัวอย่าง: `BMW_sales_data_(2010-2024).csv)
+- data/raw/ - ไฟล์ข้อมูลดิบ (ตัวอย่าง: BMW_sales_data_(2010-2024).csv)
 - data/processed/ - ไฟล์ผลลัพธ์ที่ผ่านการแปลง/clean แล้ว
 - data/db/ - ไฟล์ฐานข้อมูล SQLite ที่สร้างขึ้น
 - scripts/ - สคริปต์ ETL และช่วยงาน
@@ -15,9 +15,9 @@
   - transform_summary.py - สร้างข้อมูลสรุป (group by Region + Fuel_Type + Year)
   - create_table.py - สร้างตารางใน SQLite
   - load.py - โหลด CSV/Parquet ลงใน SQLite (ตาราง cleaned และ summary)
-- notebooks/ - โน้ตบุ๊กสำหรับ EDA และ visualization (EDA.ipynb, main.ipynb)
-- utils/ - โมดูลช่วยเหลือ logger.py
-- logs/ - บันทึกการรัน
+- notebooks - โน้ตบุ๊กสำหรับ EDA และ visualization (EDA.ipynb, main.ipynb)
+- utils - โมดูลช่วยเหลือ logger.py
+- logs - บันทึกการรัน
 
 ## สเป็คสั้น ๆ
 - Input: data/raw/BMW_sales_data_(2010-2024).csv (CSV ดิบ)
